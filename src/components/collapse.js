@@ -1,11 +1,13 @@
-import React from 'react';
+import { React, useState } from 'react';
 
 
 const Collapse = () => {
-    return(
-        <div>
-            Collapse
-        </div>
+    const [isOpen, setIsOpen] = useState(false);
+// tout mettre dans des div ?
+    return isOpen ? (
+        <button onClick ={() => setIsOpen(false)}> fermer le collapse </button>
+    ) : (
+        <button onClick = {() => setIsOpen(true)}> Ouvrir le collapse </button>
     )
 }
 

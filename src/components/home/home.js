@@ -1,14 +1,18 @@
 import React from 'react';
 import Header from '../header';
-import Banner from '../banner';
+import HomeBanner from './homeBanner';
+import HouseCardsContent from './houseCardsContent/houseCardsContent';
+import Footer from '../footer';
 
 
 const Home = () => {
     return (
     <div>
         <Header />
-        <Banner />
-        <h2> Bonjour </h2>
+        <HomeBanner />
+        <HouseCardsContent />
+        <Footer />
+
     </div>
     )
 }
