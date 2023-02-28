@@ -1,6 +1,8 @@
 import React from 'react';
 import homeBanner from '../../assets/homeBanner.jpg';
 
+// A RETRAVAILLER AVEC LE COMPOSANT IMAGE
+
 const HomeBanner = () => {
     return(
         <div>

@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-const Tag = () => {
+const Tag = (props) => {
     return(
-        <p> Test header </p>
+        <p> {props.tag} </p>
     )
 }
 
