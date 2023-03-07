@@ -17,23 +17,24 @@ import * as api from '../../utils/api';
 
 
 const Housing = () => {
-    // utiliser useParams pour récupérer l'id dans l'URL
-
+    // on va utiliser useParams pour récupérer l'id dans l'URL
     const { id } = useParams();
-    console.info(id);
+    console.log(id);
 
     // appeler l'API pour récupérer un seul item
-    const [houseData, setHouseData] = useState([]); 
+    const [houseData, setHouseData] = useState([id]); 
+
 
     // useEffect prend 2 paramètres : une fonction et un tableau de dépendance, permet de modifier l'état, pour une tâche différé
     useEffect(() => {
-        api.oneHousingData()
+        api.loadHousingDatas()
             .then((res) => {
-                setHouseData(res);
+                setHouseData(res.filter(element => element.id === id));
             })
-        }, []);
-        console.info(houseData);
-
+        }, [id]);
+        console.log(houseData);
+        // on pourrait le modifier avec la fonction oneHousingData
+    
 
     return (
         <div>
@@ -42,7 +43,11 @@ const Housing = () => {
             
             <div>
             
-                <HouseInformations />
+                <HouseInformations 
+                    title={houseData.title}
+                    location={houseData.location}
+                    tags={houseData.tags}
+                />
                 {/* passer e, paramètres le tableau des tags */}
                 <HouseOwnerAndRating  />
             </div>

@@ -1,5 +1,8 @@
 import React from 'react';
-
+// on va utiliser useEffect car les images sont dans le json
+// .map pour afficher les images
+// ajouter les chevrons sur les onClick avec preview et next
+// depuis le site fontawesome on voit comment installer dans react avec npm
 const Carrousel = () => {
     return(
         <div>Carrousel d'images</div>

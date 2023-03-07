@@ -16,15 +16,21 @@ const HouseCards = () => {
 
     return (
         <div>
-                {data.map((housing) => (
-                    <Link to = {'/housing/' + housing.id}>
+        <ul>
+        {data.map((housing) => (
+            <li key={housing.id}>
+            <Link to = {'/housing/' + housing.id}>
                         <div>
                                 <img src={housing.cover} alt={`${housing} cover`} />
                                 <span>{housing.title} </span>
                         </div>
                     </Link>
+
+            </li>
                 ))
                 }
+
+        </ul>
             
         </div>
     )

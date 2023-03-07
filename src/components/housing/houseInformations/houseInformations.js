@@ -1,16 +1,18 @@
 import React from 'react';
-import HouseLocation from './houseLocation';
-import HouseTitle from './houseTitle';
-import HouseTags from './tags/houseTags';
-// 
 
-const HouseInformations = (props) => {
+const HouseInformations = ({ title, location, tags }) => {
     return (
-        <>
-            <HouseTitle />
-            <HouseLocation />
-            <HouseTags />
-        </>
+        <div>
+            <h2>{title}</h2>
+            <div>{location}</div>
+            {/* <HouseLocation /> */}
+            {/* <HouseTags /> */}
+            <div>
+                {tags.map((tag) => 
+                    <div>{tag}</div>
+                )}
+            </div>
+        </div>
     )
 }
 

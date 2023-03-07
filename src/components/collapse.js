@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 // importer les icônes de font awesome que je vais utiliser, installer FA d'abord
-
+// utiliser les props (un titre et une description) et les children avec props.children
+// une children peut être juste une div
 
 const Collapse = () => {
     // const [isOpen, setIsOpen] = useState(false);
