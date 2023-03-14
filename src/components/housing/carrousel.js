@@ -1,20 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 // on va utiliser useEffect car les images sont dans le json
-// .map pour afficher les images
 // ajouter les chevrons sur les onClick avec preview et next
 // depuis le site fontawesome on voit comment installer dans react avec npm
 const Carrousel = (props) => {
-    console.log(props);
-    let compteur = 0;
+    // Ce useState permettra de suivre l'index de l'image sur laquelle on est
+    // on commence par l'image de d'index 0
+    const [currentImg, setCurrentImg] = useState(0)
+    console.log(props.pictures);
+    // let compteur = 0;
 
-    return(
-        <div>
-            {(props.pictures !== undefined) 
-                ? props.pictures.map((elem) => (
-                    <img key={props.id + `${compteur++}`} src={elem} alt={`${elem}`} />
-                ))
-                :''
+    /** TEST */
+
+    return (
+        <div className='carrousel'>
+            {(props.pictures !== undefined)
+                ? 
+                    <div className='carrouselInner'>
+                        <img src={props.pictures[currentImg]} alt='à compléter'/>
+                        <span className='index'>{currentImg + 1}/{props.pictures.length}</span>
+                        <div 
+                            className='arrow-left' 
+                            onClick={() => {
+                                    currentImg < 1 ? setCurrentImg(4) : setCurrentImg(currentImg - 1)}}>
+                                <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
+                        </div>
+                        <div 
+                            className='arrow-right' 
+                            onClick={() => {
+                                    currentImg > 3 ? setCurrentImg(0) : setCurrentImg(currentImg + 1)}}>
+                                <FontAwesomeIcon icon="fa-solid fa-chevron-right" />
+                        </div>
+                    </div>
+                : ''
             }
+            
         </div>
     )
 }
