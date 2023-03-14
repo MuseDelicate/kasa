@@ -22,31 +22,37 @@ const Housing = () => {
     console.log(id);
 
     // appeler l'API pour récupérer un seul item
-    const [houseData, setHouseData] = useState([id]); 
+    const [houseData, setHouseData] = useState([0]); 
 
 
     // useEffect prend 2 paramètres : une fonction et un tableau de dépendance, permet de modifier l'état, pour une tâche différé
+    // évite les await
+    // utilisé pour modifier l'état du composant (quand ça peut prendre un certain temps)
+    // mettre des conditions dans les pages si props en paramètres car useEffect va se relancer 2 fois
     useEffect(() => {
         api.loadHousingDatas()
             .then((res) => {
-                setHouseData(res.filter(element => element.id === id));
+                const resultat = res.filter(element => element.id === id)
+                setHouseData(resultat);
             })
         }, [id]);
         console.log(houseData);
         // on pourrait le modifier avec la fonction oneHousingData
-    
 
     return (
         <div>
             <Header />
-            <Carrousel />
-            
+            <Carrousel 
+                id = {houseData[0].id}
+                pictures = {houseData[0].pictures}
+            />
+            {/* passer le tableau des images. Utiliser l'index du tableau, en fonction de la taille du tableau. index ++ ou index -- */}
             <div>
-            
                 <HouseInformations 
-                    title={houseData.title}
-                    location={houseData.location}
-                    tags={houseData.tags}
+                    id = {houseData[0].id}
+                    title={houseData[0].title}
+                    location={houseData[0].location}
+                    tags={houseData[0].tags}
                 />
                 {/* passer e, paramètres le tableau des tags */}
                 <HouseOwnerAndRating  />

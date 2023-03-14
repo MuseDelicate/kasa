@@ -5,6 +5,8 @@ import { React, useState } from 'react';
 
 const Collapse = () => {
     // const [isOpen, setIsOpen] = useState(false);
+    // 1 = collapse ouvert
+    // 0 = collapse fermé
 // tout mettre dans des div ?
     // return isOpen ? (
     //     <button onClick ={() => setIsOpen(false)}> fermer le collapse </button>

@@ -3,9 +3,19 @@ import React from 'react';
 // .map pour afficher les images
 // ajouter les chevrons sur les onClick avec preview et next
 // depuis le site fontawesome on voit comment installer dans react avec npm
-const Carrousel = () => {
+const Carrousel = (props) => {
+    console.log(props);
+    let compteur = 0;
+
     return(
-        <div>Carrousel d'images</div>
+        <div>
+            {(props.pictures !== undefined) 
+                ? props.pictures.map((elem) => (
+                    <img key={props.id + `${compteur++}`} src={elem} alt={`${elem}`} />
+                ))
+                :''
+            }
+        </div>
     )
 }
 
