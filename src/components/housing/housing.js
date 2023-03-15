@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom';
 import Header from '../header';
 import HouseInformations from './houseInformations/houseInformations';
 import HouseOwnerAndRating from './houseOwnerAndRating/houseOwnerAndRating';
-import Collapse from '../collapse';
+import CollapseString from '../CollapseString';
+import CollapseArray from '../CollapseArray';
+
 import Footer from '../footer';
 import Carrousel from './carrousel';
 import * as api from '../../utils/api';
@@ -49,7 +51,7 @@ const Housing = () => {
             {/* passer le tableau des images. Utiliser l'index du tableau, en fonction de la taille du tableau. index ++ ou index -- */}
             <div>
                 <HouseInformations 
-                    id = {houseData[0].id}
+                    id ={houseData[0].id}
                     title={houseData[0].title}
                     location={houseData[0].location}
                     tags={houseData[0].tags}
@@ -58,8 +60,16 @@ const Housing = () => {
                 <HouseOwnerAndRating  />
             </div>
             <div>
-                <Collapse />
-                <Collapse />
+                <CollapseString 
+                    id={houseData[0].id}
+                    title={'Description'}
+                    details={houseData[0].description}
+                />
+                <CollapseArray 
+                    id={houseData[0].id}
+                    title={'Equipements'}
+                    details={houseData[0].equipments}
+                />
             </div>
             <Footer />
 
