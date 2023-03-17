@@ -3,7 +3,7 @@ import { React, useState } from 'react';
 // utiliser les props (un titre et une description) et les children avec props.children
 // une children peut être juste une div
 
-const CollapseArray = (props) => {
+const CollapseString = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -27,4 +27,4 @@ const CollapseArray = (props) => {
     )
 }
 
-export default CollapseArray;
+export default CollapseString;
