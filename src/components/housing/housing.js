@@ -21,7 +21,6 @@ import * as api from '../../utils/api';
 const Housing = () => {
     // on va utiliser useParams pour récupérer l'id dans l'URL
     const { id } = useParams();
-    console.log(id);
 
     // appeler l'API pour récupérer un seul item
     const [houseData, setHouseData] = useState([0]); 
@@ -56,17 +55,19 @@ const Housing = () => {
                     location={houseData[0].location}
                     tags={houseData[0].tags}
                 />
-                {/* passer e, paramètres le tableau des tags */}
-                <HouseOwnerAndRating  />
+                <HouseOwnerAndRating  
+                    host={houseData[0].host}
+                    rating={houseData[0].rating}
+                />
             </div>
             <div>
                 <CollapseString 
-                    id={houseData[0].id}
+                    id={houseData[0].id}/* ??? */
                     title={'Description'}
                     details={houseData[0].description}
                 />
                 <CollapseArray 
-                    id={houseData[0].id}
+                    id={houseData[0].id} /* ??? */
                     title={'Equipements'}
                     details={houseData[0].equipments}
                 />

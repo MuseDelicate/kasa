@@ -1,14 +1,17 @@
 import React from 'react';
-// import Image from 'image';
-// créer un composant image pour l'inclure à chaque fois qu'il y en aura besoin
+import Picture from '../../Picture';
 
-
-const Owner = () => {
+const Owner = (props) => {
+    if (props.host) {
+        console.log(props);
+        console.log(props.host.name);
+        console.log(props.host.picture);
+    }
     return(
         <div>
-            <span>Alexandre Dumas</span>
-            {/* <Image /> */}
-            {/* <img  src='' alt="Le propriétaire" /> */}
+            {props.host ? <span>{props.host.name}</span> : ''}
+            <p>photo du propriétaire</p>
+            {/* <Picture picture={props.host.picture} name={props.host.name} /> */}
         </div>
     )
 }
@@ -20,3 +23,5 @@ export default Owner;
 // les props sont les propriétés qu'on peut ajouter à la balise
 // ces propriétés sont accessibles
 // les props sont les variables qu'on passe à la fonction composant
+
+

@@ -3,11 +3,11 @@ import Owner from './owner';
 import Rating from './rating/rating';
 
 
-const HouseOwnerAndRating = () => {
+const HouseOwnerAndRating = (props) => {
     return(
         <div>
-            <Owner />
-            <Rating />
+            <Owner host={props.host}/>
+            <Rating rating={props.rating}/>
         </div>
     )
 }

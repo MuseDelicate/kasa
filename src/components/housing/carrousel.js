@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // on va utiliser useEffect car les images sont dans le json
 // ajouter les chevrons sur les onClick avec preview et next
-// depuis le site fontawesome on voit comment installer dans react avec npm
 const Carrousel = (props) => {
     // Ce useState permettra de suivre l'index de l'image sur laquelle on est
     // par défaut on commence par l'image de d'index 0
@@ -25,13 +23,11 @@ const Carrousel = (props) => {
                             <div className='arrow-left'>
                                 <button onClick={() => {currentImg < 1 ? setCurrentImg(compteur) : setCurrentImg(currentImg - 1)}}>
                                     Précédent
-                                    {/* <FontAwesomeIcon icon="fa-solid fa-chevron-left" /> */}
                                 </button>
                             </div>
                             <div className='arrow-right' >
                                 <button onClick={() => {currentImg >= compteur ? setCurrentImg(0) : setCurrentImg(currentImg + 1)}}>
                                     Suivant
-                                    {/* <FontAwesomeIcon icon="fa-solid fa-chevron-right" /> */}
                                 </button>
                             </div>
                         </div>

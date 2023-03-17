@@ -1,12 +1,12 @@
 import React from 'react';
-import homeBanner from '../../assets/homeBanner.jpg';
+import IMG from '../../assets/IMG.png'
 
 // A RETRAVAILLER AVEC LE COMPOSANT IMAGE
 
 const HomeBanner = () => {
     return(
         <div>
-            <img src={homeBanner} alt="Kasa" style={{
+            <img src={IMG} alt="Kasa" style={{
                 objectFit: 'cover',
                 width: '80%',
                 height: '250px'
