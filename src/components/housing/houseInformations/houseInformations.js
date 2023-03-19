@@ -2,7 +2,6 @@ import React from 'react';
 
 const HouseInformations = (props) => {
     // props est un objet qui contient tout ce que j'ai passé en propriété lors de l'appel du composant
-    console.log(props);
 
     let compteur = 0;
     return (

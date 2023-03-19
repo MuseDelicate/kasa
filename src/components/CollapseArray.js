@@ -1,4 +1,7 @@
 import { React, useState } from 'react';
+import chevronDown from '../assets/chevronDown.png';
+import chevronUp from '../assets/chevronUp.png';
+
 
 // importer les icônes de font awesome que je vais utiliser, installer FA d'abord
 // utiliser les props (un titre et une description) et les children avec props.children
@@ -11,8 +14,12 @@ const CollapseArray = (props) => {
     return (
         <div>
             <p>
-                <button onClick={() => setIsOpen(true)}>Ouvrir</button>
-                <button onClick={() => setIsOpen(false)}>Fermer</button>
+                <button onClick={() => setIsOpen(true)}>
+                    <img src={chevronDown} alt="flèche vers le bas" />
+                </button>
+                <button onClick={() => setIsOpen(false)}>
+                    <img src={chevronUp} alt="flèche vers le bas" />
+                </button>
                 {props.title}
             </p>
 

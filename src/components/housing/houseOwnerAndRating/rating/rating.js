@@ -4,8 +4,9 @@ import starFull from '../../../../assets/starFull.svg'
 
 
 const Rating = ({ rating }) => {
-
+if (rating !== undefined) {
     console.log(rating);
+}
 
     const totalStars = 5;
     const validateStars = rating;
@@ -24,11 +25,11 @@ const Rating = ({ rating }) => {
 
     return(
         <div>
-            {starArray.map((elem) => (
+            {starArray.map((elem, index) => (
                 <span>
                     {elem
-                        ? <img src={starFull} alt="étoile" />
-                        : <img src={starEmpty} alt="étoile" />
+                        ? <img src={starFull} key={`${starFull}-${index}`} alt="étoile" />
+                        : <img src={starEmpty} key={`${starEmpty}-${index}`} alt="étoile" />
                     }
                 </span>
 

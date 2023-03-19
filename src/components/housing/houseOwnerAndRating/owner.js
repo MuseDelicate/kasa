@@ -1,17 +1,23 @@
 import React from 'react';
 import Picture from '../../Picture';
 
-const Owner = (props) => {
-    if (props.host) {
-        console.log(props);
-        console.log(props.host.name);
-        console.log(props.host.picture);
+const Owner = ({ host }) => {
+
+    if (host !== undefined) {
+        console.log(host);
     }
     return(
         <div>
-            {props.host ? <span>{props.host.name}</span> : ''}
-            <p>photo du propriétaire</p>
-            {/* <Picture picture={props.host.picture} name={props.host.name} /> */}
+            {host 
+                ? 
+                    <div>
+                        <p>{host.name}</p>
+                        <img src={host.picture} alt={host.name} />
+                    </div> 
+                : ''
+            }
+            
+            {/* <Picture picture={host.picture} name={host.name} /> */}
         </div>
     )
 }
