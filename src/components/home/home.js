@@ -1,10 +1,10 @@
 import { React } from 'react';
-import Header from '../header';
-import HomeBanner from './homeBanner';
-import HouseCards from './houseCards/houseCards';
-import Footer from '../footer';
+import Header from '../Header';
+import HomeBanner from './HomeBanner';
+import HouseCards from './houseCards/HouseCards';
+import Footer from '../Footer';
 
-
+// ajouter ici le fichier css pour toute la page
 const Home = () => {
 
     return (

@@ -13,10 +13,10 @@ const Carrousel = (props) => {
     
 
     return (
-        <div className='carrousel'>
+        <div>
             {(props.pictures !== undefined)
                 ? 
-                    <div className='carrouselInner'>
+                    <div>
                         <img src={props.pictures[currentImg]} alt='à compléter'/>
                         <span className='index'>{currentImg + 1}/{props.pictures.length}</span>
                         <div>

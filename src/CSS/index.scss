@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Montserrat', 'sans-serif';
+    padding: 57px 100px;
+}
+
+// mettre plutôt dans Home.module.scss
+// importer les fichiers css
+// convention de react : 'nom du composant'.module.scss
+// changer le nom du fichier 'styles' en 'CSS' (convention HTML)
+// créer un fichier module CSS pour chaque composant

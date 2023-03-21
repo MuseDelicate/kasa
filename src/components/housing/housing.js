@@ -1,13 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import Header from '../header';
-import HouseInformations from './houseInformations/houseInformations';
-import HouseOwnerAndRating from './houseOwnerAndRating/houseOwnerAndRating';
-import CollapseString from '../CollapseString';
-import CollapseArray from '../CollapseArray';
+import Header from '../Header';
+import HouseInformations from './houseInformations/HouseInformations';
+import HouseOwnerAndRating from './houseOwnerAndRating/HouseOwnerAndRating';
+import Collapse from '../Collapse';
 
-import Footer from '../footer';
-import Carrousel from './carrousel';
+import Footer from '../Footer';
+import Carrousel from './Carrousel';
 import * as api from '../../utils/api';
 
 
@@ -60,31 +59,32 @@ const Housing = () => {
                     rating={houseData[0].rating}
                 />
             </div>
+            {/* passer juste le contenu dans une props.children */}
             <div>
-                <CollapseString 
-                    id={houseData[0].id}/* ??? */
+                <Collapse 
+                    id={houseData[0].id}/* à supprimer ??? */
                     title={'Description'}
-                    details={houseData[0].description}
-                />
-                <CollapseArray 
-                    id={houseData[0].id} /* ??? */
+                >
+                    <p>{houseData[0].description}</p>
+                </Collapse>
+
+                <Collapse  
+                    id={houseData[0].id}/* ??? */
                     title={'Equipements'}
-                    details={houseData[0].equipments}
-                />
+                    >
+                    <ul>
+                        {houseData[0].equipments !== undefined 
+                            ? houseData[0].equipments.map(elem => (
+                                <li>{elem}</li>
+                            ))
+                            : ''
+                        }
+                    </ul>
+
+                </Collapse>
+
             </div>
             <Footer />
-
-            {/** revoir la syntaxe. Créer un tableau de lien d'image pour chaque location proposée ? ou utiliser l'id 
-            <ul>
-            housingList.pictures.forEach(pictures => {
-                <li>
-                    <img src={housing.pictures} alt="" />
-                </li>
-           
-
-                })
-            </ul>
-            */}
           
         </div>
     )

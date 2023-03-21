@@ -1,0 +1,11 @@
+.up {
+    overflow: hidden;
+    transition: height 0.3s ease-out;
+    height: 0;
+}
+
+.down {
+    transition: height 0.3s ease-out;
+    height: 100px;
+    /* modifier cette valeur si les textes sont coupés ou max-height */
+}
