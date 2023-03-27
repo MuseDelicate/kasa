@@ -4,11 +4,8 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import style from '../CSS/Collapse.module.css'
 
-// utiliser les props (un titre et une description) et les children avec props.children
-// une children peut être juste une div
-
 const Collapse = (props) => {
-    const [isOpen, setIsOpen] = useState(style.down);
+    const [isOpen, setIsOpen] = useState(style.up);
 
 // on peut mettre une condition dans un className
     return (

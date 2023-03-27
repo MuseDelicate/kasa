@@ -1,0 +1,18 @@
+footer {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 5% 5% 3% 5%;
+}
+
+footer img {
+    width: 122px;
+}
+
+footer p {
+    color: #FFFFFF;
+    font-size: 20px;
+    margin: 0;
+}

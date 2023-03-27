@@ -36,7 +36,6 @@ const Housing = () => {
                 setHouseData(resultat);
             })
         }, [id]);
-        console.log(houseData);
         // on pourrait le modifier avec la fonction oneHousingData
 
     return (

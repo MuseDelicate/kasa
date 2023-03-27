@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as api from '../../../utils/api';
 import { Link } from 'react-router-dom';
+import style from '../../../CSS/HouseCards.module.css'
 
 
 const HouseCards = () => {

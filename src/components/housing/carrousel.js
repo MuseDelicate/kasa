@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import chevronLeft from '../../assets/chevronLeft.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 
 // on va utiliser useEffect car les images sont dans le json
 // ajouter les chevrons sur les onClick avec preview et next
@@ -20,15 +24,14 @@ const Carrousel = (props) => {
                         <img src={props.pictures[currentImg]} alt='à compléter'/>
                         <span className='index'>{currentImg + 1}/{props.pictures.length}</span>
                         <div>
+                        {/* comment faire pour  que l'image de la flèche se mette 'sur' la photo du logement ?  */}
                             <div className='arrow-left'>
-                                <button onClick={() => {currentImg < 1 ? setCurrentImg(compteur) : setCurrentImg(currentImg - 1)}}>
-                                    Précédent
-                                </button>
+                                <img src={chevronLeft} alt='fléche gauche'
+                                onClick={() => {currentImg < 1 ? setCurrentImg(compteur) : setCurrentImg(currentImg - 1)}}
+                                />
                             </div>
                             <div className='arrow-right' >
-                                <button onClick={() => {currentImg >= compteur ? setCurrentImg(0) : setCurrentImg(currentImg + 1)}}>
-                                    Suivant
-                                </button>
+                                <FontAwesomeIcon icon={faChevronRight} onClick={() => {currentImg >= compteur ? setCurrentImg(0) : setCurrentImg(currentImg + 1)}}/>
                             </div>
                         </div>
                     </div>

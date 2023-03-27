@@ -10,7 +10,7 @@ const Error404 = () => {
         <Header />
             <h2> 404 </h2>
             <h3> Oups! La page que vous demandez n'existe pas.</h3>
-            <Link to={'/'} className='returnToHome'>
+            <Link to={'/'} >
                 Retourner sur la page d'accueil
             </Link>
         <Footer />

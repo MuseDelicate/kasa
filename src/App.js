@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import router from './route';
 import { RouterProvider } from 'react-router-dom';
 

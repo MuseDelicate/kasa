@@ -1,5 +1,20 @@
-.header-kasa {
+.headerKasa {
     display: flex;
+    padding: 3% 6%;
+    align-items: center;
     justify-content: space-between;
-    width: 100%;
+}
+
+.headerKasa nav {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.headerKasa nav a {
+    color: #FF6060;
+    font-size: 24px;
+    text-decoration: none;
+    width: auto;
+    margin-left: 1%;
 }

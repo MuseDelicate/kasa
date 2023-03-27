@@ -1,17 +1,13 @@
 import React from 'react';
-import IMG from '../../assets/IMG.png'
+import homeBanner from '../../assets/homeBanner.png';
+import style from '../../CSS/HomeBanner.module.css';
 
-// A RETRAVAILLER AVEC LE COMPOSANT IMAGE
 
 const HomeBanner = () => {
     return(
-        <div>
-            <img src={IMG} alt="Kasa" style={{
-                objectFit: 'cover',
-                width: '80%',
-                height: '250px'
-            }}/>
-            <span>Chez vous, partout et ailleurs</span>
+        <div className={style.banner}>
+            <img src={homeBanner} alt="Kasa" />
+            <h1>Chez vous, partout et ailleurs</h1>
         </div>
     )
 }
