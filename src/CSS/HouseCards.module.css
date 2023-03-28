@@ -1,5 +1,5 @@
 .houseCards {
-    background-color: #F6F6F6;
+    background-color: #F7F7F7;
     border-radius: 25px;
     padding: 20px;
     display: flex;
@@ -8,38 +8,32 @@
 
 .houseCards li {
     list-style-type: none;
-    width: 28%;
-    height: 200px;
-    margin: 15px;
+    width: 29%;
+    height: 320px;
+    margin: 2%;
     position: relative;
+    background: linear-gradient(180deg, #FF6060 0%, #000000 100%);
+    border-radius: 10px;
 }
-
-
-/* .houseCards li :after {
-    content: '';
-    background-image: linear-gradient(to bottom, #FFFFFF 0%, #000000 50%);
-    position: absolute;
-    left: 0;
-    bottom: 0;
-} */
 
 .houseCard img {
     width: 100%;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 10px;
     overflow: hidden;
     object-fit: cover;
-    opacity: 0.7;
+    opacity: 1;
+    transition: all 200ms ease-in-out;
 }
 
-
-/* .houseCard img :hover {
-    opacity: 0;
-} */
+.houseCard img:hover {
+    opacity: 0.5;
+}
 
 .houseCard span {
     position: absolute;
     left: 10px;
     bottom: 10px;
     color: #FFFFFF;
+    font-weight: 600;
 }
