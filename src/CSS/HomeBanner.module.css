@@ -2,7 +2,7 @@
     width: 100%;
     height: 220px;
     border-radius: 25px;
-    background-image: url('../assets/homeBanner.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/homeBanner.png');
     background-position: center;
     background-size: cover;
     display: flex;
