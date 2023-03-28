@@ -12,7 +12,7 @@ const Home = () => {
     return (
     <div>
         <Header />
-    <div className={style.bodyKasa}>
+    <div className={style.bodyKasa} >
         <HomeBanner />
         <HouseCards />
     </div>

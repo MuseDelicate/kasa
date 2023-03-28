@@ -38,6 +38,8 @@ const Housing = () => {
         }, [id]);
         // on pourrait le modifier avec la fonction oneHousingData
 
+        let compteur = 0;
+
     return (
         <div>
             <Header />
@@ -74,7 +76,7 @@ const Housing = () => {
                     <ul>
                         {houseData[0].equipments !== undefined 
                             ? houseData[0].equipments.map(elem => (
-                                <li>{elem}</li>
+                                <li key={`${houseData[0].id} + ${compteur++}`}>{elem}</li>
                             ))
                             : ''
                         }

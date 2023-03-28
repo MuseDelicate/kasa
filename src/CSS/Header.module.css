@@ -6,9 +6,10 @@
 }
 
 .headerKasa nav {
-    width: auto;
+    width: 50%;
     display: flex;
     flex-direction: row;
+    justify-content: right;
 }
 
 .headerKasa nav a {
@@ -16,5 +17,15 @@
     font-size: 24px;
     text-decoration: none;
     width: auto;
-    margin-left: 1%;
+    margin-left: 40px;
 }
+
+
+/* version mobile */
+
+
+/* @media screen and (max-width: 768px) {
+    .headerKasa nav {
+        text-transform: uppercase;
+    }
+} */
