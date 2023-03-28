@@ -1,0 +1,45 @@
+.houseCards {
+    background-color: #F6F6F6;
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.houseCards li {
+    list-style-type: none;
+    width: 28%;
+    height: 200px;
+    margin: 15px;
+    position: relative;
+}
+
+
+/* .houseCards li :after {
+    content: '';
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #000000 50%);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+} */
+
+.houseCard img {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+
+/* .houseCard img :hover {
+    opacity: 0;
+} */
+
+.houseCard span {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    color: #FFFFFF;
+}
