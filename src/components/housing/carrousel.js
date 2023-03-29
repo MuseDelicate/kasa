@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import chevronLeft from '../../assets/chevronLeft.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-
+import chevronRight from '../../assets/chevronRight.png';
+import style from '../../CSS/Carrousel.module.css';
+import globalStyle from '../../CSS/Home.module.css';
 
 // on va utiliser useEffect car les images sont dans le json
 // ajouter les chevrons sur les onClick avec preview et next
@@ -15,25 +15,22 @@ const Carrousel = (props) => {
         compteur = props.pictures.length - 1;
     }
     
-
+// compléter le alt !!!!!
     return (
-        <div>
+        <div className={globalStyle.bodyKasa}>
             {(props.pictures !== undefined)
                 ? 
-                    <div>
-                        <img src={props.pictures[currentImg]} alt='à compléter'/>
-                        <span className='index'>{currentImg + 1}/{props.pictures.length}</span>
+                    <div className={style.carrouselContainer}>
+                        <img src={props.pictures[currentImg]} alt='à compléter' className={style.pictures}/>
                         <div>
-                        {/* comment faire pour  que l'image de la flèche se mette 'sur' la photo du logement ?  */}
-                            <div className='arrow-left'>
-                                <img src={chevronLeft} alt='fléche gauche'
+                            <img src={chevronLeft} alt='flèche gauche' className={style.chevronLeft}
                                 onClick={() => {currentImg < 1 ? setCurrentImg(compteur) : setCurrentImg(currentImg - 1)}}
-                                />
-                            </div>
-                            <div className='arrow-right' >
-                                <FontAwesomeIcon icon={faChevronRight} onClick={() => {currentImg >= compteur ? setCurrentImg(0) : setCurrentImg(currentImg + 1)}}/>
-                            </div>
+                            />
+                            <img src={chevronRight} alt='flèche droite' className={style.chevronRight}
+                                onClick={() => {currentImg >= compteur ? setCurrentImg(0) : setCurrentImg(currentImg + 1)}}/>
                         </div>
+                        <span className='index'>{currentImg + 1}/{props.pictures.length}</span>
+
                     </div>
                 : ''
             }

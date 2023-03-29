@@ -11,8 +11,6 @@ import * as api from '../../utils/api';
 
 
 // vérifier qu'on renvoie vers 404 si l'id n'est pas bon
-// utiliser useNavigate pour rediriger vers 404
-// useStat et useEffect pour afficher un seul item
 // on met dans setData quant c'est disponible
 
 
@@ -36,7 +34,6 @@ const Housing = () => {
                 setHouseData(resultat);
             })
         }, [id]);
-        // on pourrait le modifier avec la fonction oneHousingData
 
         let compteur = 0;
 

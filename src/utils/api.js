@@ -11,9 +11,3 @@ export const loadHousingDatas = async() => {
         .catch((error) => console.log(error))
     };    
 
-// // fonction pour récupérer un seul logement
-// export const oneHousingData = async(id) => {
-//     loadHousingDatas()
-//     .then((data) => data.filter(element => element.id === id))
-// }
-
