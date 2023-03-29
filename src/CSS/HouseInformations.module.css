@@ -1,0 +1,30 @@
+.houseInformations h2 {
+    font-size: 50px;
+    font-weight: 500;
+    color: #FF6060;
+    margin: 5px auto;
+}
+
+.houseInformations span {
+    font-weight: 500;
+    color: #FF6060;
+}
+
+.houseInformations .tags {
+    display: flex;
+}
+
+.houseInformations .tags p {
+    background-color: #FF6060;
+    color: #FFF;
+    font-size: 14px;
+    width: auto;
+    min-width: 125px;
+    height: 25px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    border-radius: 10px;
+}

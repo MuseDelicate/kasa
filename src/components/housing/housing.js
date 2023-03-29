@@ -4,11 +4,11 @@ import Header from '../Header';
 import HouseInformations from './houseInformations/HouseInformations';
 import HouseOwnerAndRating from './houseOwnerAndRating/HouseOwnerAndRating';
 import Collapse from '../Collapse';
-
 import Footer from '../Footer';
 import Carrousel from './Carrousel';
 import * as api from '../../utils/api';
-
+import style from '../../CSS/Housing.module.css';
+import globalStyle from '../../CSS/Home.module.css';
 
 // vérifier qu'on renvoie vers 404 si l'id n'est pas bon
 // on met dans setData quant c'est disponible
@@ -38,52 +38,47 @@ const Housing = () => {
         let compteur = 0;
 
     return (
-        <div>
+        <div >
             <Header />
-            <Carrousel 
-                id = {houseData[0].id}
-                pictures = {houseData[0].pictures}
-            />
-            {/* passer le tableau des images. Utiliser l'index du tableau, en fonction de la taille du tableau. index ++ ou index -- */}
-            <div>
-                <HouseInformations 
-                    id ={houseData[0].id}
-                    title={houseData[0].title}
-                    location={houseData[0].location}
-                    tags={houseData[0].tags}
+            <div className={globalStyle.bodyKasa}>
+                <Carrousel 
+                    id = {houseData[0].id}
+                    pictures = {houseData[0].pictures}
                 />
-                <HouseOwnerAndRating  
-                    host={houseData[0].host}
-                    rating={houseData[0].rating}
-                />
-            </div>
-            {/* passer juste le contenu dans une props.children */}
-            <div>
-                <Collapse 
-                    id={houseData[0].id}/* à supprimer ??? */
-                    title={'Description'}
-                >
-                    <p>{houseData[0].description}</p>
-                </Collapse>
-
-                <Collapse  
-                    id={houseData[0].id}/* ??? */
-                    title={'Equipements'}
+                <div className={style.housingInfosAndOwnerContainer}>
+                    <HouseInformations 
+                        id ={houseData[0].id}
+                        title={houseData[0].title}
+                        location={houseData[0].location}
+                        tags={houseData[0].tags}
+                    />
+                    <HouseOwnerAndRating  
+                        host={houseData[0].host}
+                        rating={houseData[0].rating}
+                    />
+                </div>
+                <div className={style.housingCollapseContainer}>
+                    <Collapse 
+                        title={'Description'}
                     >
-                    <ul>
-                        {houseData[0].equipments !== undefined 
-                            ? houseData[0].equipments.map(elem => (
-                                <li key={`${houseData[0].id} + ${compteur++}`}>{elem}</li>
-                            ))
-                            : ''
-                        }
-                    </ul>
-
-                </Collapse>
-
+                        <p>{houseData[0].description}</p>
+                    </Collapse>
+                    <Collapse   
+                        id={houseData[0].id}
+                        title={'Equipements'}
+                        >
+                        <ul>
+                            {houseData[0].equipments !== undefined 
+                                ? houseData[0].equipments.map(elem => (
+                                    <li key={`${houseData[0].id} + ${compteur++}`}>{elem}</li>
+                                ))
+                                : ''
+                            }
+                        </ul>
+                    </Collapse>
+                </div>
             </div>
             <Footer />
-          
         </div>
     )
 }

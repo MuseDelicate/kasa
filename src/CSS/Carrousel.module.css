@@ -1,5 +1,8 @@
+.carrousel {
+    margin-bottom: 2%;
+}
+
 .carrouselContainer {
-    background-color: blue;
     height: 415px;
     width: auto;
     position: relative;

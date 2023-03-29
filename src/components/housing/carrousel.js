@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import chevronLeft from '../../assets/chevronLeft.png';
 import chevronRight from '../../assets/chevronRight.png';
 import style from '../../CSS/Carrousel.module.css';
-import globalStyle from '../../CSS/Home.module.css';
 
 // on va utiliser useEffect car les images sont dans le json
 // ajouter les chevrons sur les onClick avec preview et next
@@ -17,7 +16,7 @@ const Carrousel = (props) => {
     
 // compléter le alt !!!!!
     return (
-        <div className={globalStyle.bodyKasa}>
+        <div className={style.carrousel} >
             {(props.pictures !== undefined)
                 ? 
                     <div className={style.carrouselContainer}>
@@ -34,7 +33,6 @@ const Carrousel = (props) => {
                     </div>
                 : ''
             }
-            
         </div>
     )
 }

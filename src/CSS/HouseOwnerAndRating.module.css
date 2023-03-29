@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.host {
+    display: flex;
+    width: 168px;
+    height: 64px;
+}
+
+.host img {
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+    object-fit: cover;
+}
+
+.host span {
+    font-size: 18px;
+    color: #FF6060;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 93px;
+}
+
+.stars {
+    display: flex;
+    flex-wrap: nowrap;
+}
