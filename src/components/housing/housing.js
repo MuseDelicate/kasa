@@ -58,24 +58,28 @@ const Housing = () => {
                     />
                 </div>
                 <div className={style.housingCollapseContainer}>
-                    <Collapse 
-                        title={'Description'}
-                    >
-                        <p>{houseData[0].description}</p>
-                    </Collapse>
-                    <Collapse   
-                        id={houseData[0].id}
-                        title={'Equipements'}
-                        >
-                        <ul>
-                            {houseData[0].equipments !== undefined 
-                                ? houseData[0].equipments.map(elem => (
-                                    <li key={`${houseData[0].id} + ${compteur++}`}>{elem}</li>
-                                ))
-                                : ''
-                            }
-                        </ul>
-                    </Collapse>
+                    <div className={style.descriptionCollapse}>
+                        <Collapse 
+                                title={'Description'}
+                            >
+                                <p>{houseData[0].description}</p>
+                            </Collapse>
+                    </div>
+                    <div className={style.equipmentsCollapse}>
+                        <Collapse   
+                                id={houseData[0].id}
+                                title={'Equipements'}
+                                >
+                                <ul>
+                                    {houseData[0].equipments !== undefined 
+                                        ? houseData[0].equipments.map(elem => (
+                                            <li key={`${houseData[0].id} + ${compteur++}`}>{elem}</li>
+                                        ))
+                                        : ''
+                                    }
+                                </ul>
+                            </Collapse>
+                    </div>
                 </div>
             </div>
             <Footer />

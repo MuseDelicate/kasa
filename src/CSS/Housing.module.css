@@ -6,4 +6,18 @@
 
 .housingCollapseContainer {
     display: flex;
+    justify-content: space-between;
+}
+
+.housingCollapseContainer {
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+}
+
+.descriptionCollapse {
+    grid-column: 1/2;
+}
+
+.equipmentsCollapse {
+    grid-column: 3/4;
 }

@@ -1,3 +1,7 @@
+.houseInformations {
+    margin-bottom: 1%;
+}
+
 .houseInformations h2 {
     font-size: 50px;
     font-weight: 500;
@@ -12,7 +16,6 @@
 
 .houseInformations .tags {
     display: flex;
-    margin-bottom: 2%;
 }
 
 .houseInformations .tags p {

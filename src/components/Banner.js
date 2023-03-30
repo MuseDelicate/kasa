@@ -6,7 +6,7 @@ const Banner = (props) => {
     return(
         <div className={style.banner}>
             <img src={props.src} alt={props.alt} />
-            <h1>Chez vous, partout et ailleurs</h1>
+            <h1>{props.title}</h1>
         </div>
     )
 }

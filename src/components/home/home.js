@@ -15,7 +15,7 @@ const Home = () => {
     <div>
         <Header />
     <div className={style.bodyKasa} >
-        <Banner src={homeBanner} alt='bannière Kasa : des rochers en bord de mer'/>
+        <Banner title='Chez vous, partout et ailleurs' src={homeBanner} alt='bannière Kasa : des rochers en bord de mer'/>
         <HouseCards />
     </div>
         <Footer />
