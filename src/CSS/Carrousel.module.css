@@ -6,6 +6,7 @@
     height: 415px;
     width: auto;
     position: relative;
+    border-radius: 25px;
 }
 
 .carrouselContainer .pictures {
@@ -13,6 +14,7 @@
     height: 100%;
     overflow: hidden;
     object-fit: cover;
+    border-radius: 25px;
 }
 
 .chevronLeft {

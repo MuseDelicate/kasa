@@ -12,11 +12,11 @@ const Collapse = (props) => {
                 <h3>{props.title}</h3>
                 <img src={isOpen === style.down ? chevronUp : chevronDown} alt={isOpen === style.down ? 'flèche vers le haut' : 'flèche vers le bas'} />
             </div>
-                <p className={isOpen}>
-                    { 
-                        props.children
-                    }
-                </p>
+            <div className={`${isOpen} + ${style.collapseContent}`}>
+                { 
+                    props.children
+                }
+            </div>
         </div>
     )
 }

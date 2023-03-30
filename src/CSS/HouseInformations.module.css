@@ -12,6 +12,7 @@
 
 .houseInformations .tags {
     display: flex;
+    margin-bottom: 2%;
 }
 
 .houseInformations .tags p {

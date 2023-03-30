@@ -1,9 +1,11 @@
 import { React } from 'react';
 import Header from '../Header';
-import HomeBanner from './HomeBanner';
+import Banner from '../Banner';
 import HouseCards from './houseCards/HouseCards';
 import Footer from '../Footer';
 import style from '../../CSS/Home.module.css';
+import homeBanner from '../../assets/homeBanner.png';
+
 
 
 // ajouter ici le fichier css pour toute la page
@@ -13,7 +15,7 @@ const Home = () => {
     <div>
         <Header />
     <div className={style.bodyKasa} >
-        <HomeBanner />
+        <Banner src={homeBanner} alt='bannière Kasa : des rochers en bord de mer'/>
         <HouseCards />
     </div>
         <Footer />

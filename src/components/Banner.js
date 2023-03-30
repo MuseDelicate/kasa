@@ -1,13 +1,14 @@
 import React from 'react';
-import style from '../../CSS/HomeBanner.module.css';
+import style from '../CSS/Banner.module.css';
 
+const Banner = (props) => {
 
-const HomeBanner = () => {
     return(
         <div className={style.banner}>
+            <img src={props.src} alt={props.alt} />
             <h1>Chez vous, partout et ailleurs</h1>
         </div>
     )
 }
 
-export default HomeBanner;
+export default Banner;

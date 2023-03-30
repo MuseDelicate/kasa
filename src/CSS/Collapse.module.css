@@ -1,5 +1,5 @@
 .collapse {
-    width: 47%;
+    width: 80%;
 }
 
 .up {
@@ -10,6 +10,7 @@
 }
 
 .down {
+    overflow-y: scroll;
     transition: height 0.5s ease-in-out, opacity 1s ease-in-out;
     height: 150px;
     opacity: 1;
@@ -39,10 +40,10 @@
     color: #FFF;
 }
 
-.collapse p {
+.collapse .collapseContent {
     margin-top: 0;
     background-color: #F6F6F6;
-    padding: 20px;
+    padding: 10px;
     color: #FF6060;
     font-size: 18px;
     border-radius: 10px;
