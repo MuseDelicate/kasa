@@ -31,3 +31,20 @@
     flex-wrap: nowrap;
     padding-top: 1%;
 }
+
+
+/* version mobile */
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .host span {
+        font-size: 14px;
+    }
+    .stars img {
+        width: 18px;
+    }
+}

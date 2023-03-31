@@ -16,7 +16,7 @@ const HouseCards = () => {
         }, []);
 
     return (
-        <ul className={style.houseCards}>
+        <div className={style.houseCards}>
         {data.map((housing) => (
             <li key={housing.id}>
                 <Link to = {'/housing/' + housing.id} className={style.houseCard}>
@@ -26,7 +26,7 @@ const HouseCards = () => {
             </li>
             ))
             }
-        </ul>
+        </div>
     )
 }
 

@@ -49,3 +49,18 @@
     font-size: 18px;
     border-radius: 10px;
 }
+
+
+/* version mobile */
+
+@media screen and (max-width: 768px) {
+    .down {
+        height: 100px;
+    }
+    .collapseTitle h3 {
+        font-size: 14px;
+    }
+    .collapse .collapseContent {
+        font-size: 12px;
+    }
+}

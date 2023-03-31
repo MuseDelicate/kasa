@@ -1,5 +1,5 @@
 .banner {
-    width: 100%;
+    /* width: 100%; */
     height: 220px;
     border-radius: 25px;
     display: flex;
@@ -7,6 +7,8 @@
     align-items: center;
     margin-bottom: 5%;
     position: relative;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .banner img {
@@ -22,7 +24,28 @@
     font-weight: 500;
     margin: 0;
     position: absolute;
+    font-size: 48px;
 }
 
 
 /* display flex et justify content et vertical align pour centrer le texte sur la bannière */
+
+
+/* version tablette */
+
+@media screen and (max-width: 992px) {
+    .banner {
+        /* width: 90%; */
+        height: 150px;
+        border-radius: 10px;
+        /* margin-left: auto;
+        margin-right: auto; */
+    }
+    .banner img {
+        border-radius: 10px;
+    }
+    .banner h1 {
+        margin: 5%;
+        font-size: 24px;
+    }
+}

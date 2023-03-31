@@ -7,11 +7,12 @@
 .housingCollapseContainer {
     display: flex;
     justify-content: space-between;
+    margin-top: 2%;
 }
 
 .housingCollapseContainer {
     display: grid;
-    grid-template-columns: 45% 10% 45%;
+    grid-template-columns: 47% 6% 47%;
 }
 
 .descriptionCollapse {
@@ -20,4 +21,18 @@
 
 .equipmentsCollapse {
     grid-column: 3/4;
+}
+
+
+/* version mobile */
+
+@media screen and (max-width: 767px) {
+    .housingInfosAndOwnerContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .housingCollapseContainer {
+        display: block;
+        width: 100%;
+    }
 }

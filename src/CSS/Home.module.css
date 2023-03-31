@@ -9,5 +9,24 @@ body {
 }
 
 .bodyKasa {
-    padding: 3% 6%;
+    padding: 30px 50px;
+    box-sizing: border-box;
+}
+
+
+/* version tablette */
+
+@media screen and (max-width: 992px) {
+    .bodyKasa {
+        padding: 15px 25px;
+    }
+}
+
+
+/* version mobile */
+
+@media screen and (max-width: 768px) {
+    .bodyKasa {
+        padding: 12px 20px;
+    }
 }

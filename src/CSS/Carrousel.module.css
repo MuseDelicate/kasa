@@ -4,7 +4,7 @@
 
 .carrouselContainer {
     height: 415px;
-    width: auto;
+    width: 100%;
     position: relative;
     border-radius: 25px;
     margin-bottom: 2%;
@@ -20,7 +20,7 @@
 
 .chevronLeft {
     position: absolute;
-    top: 170px;
+    top: 45%;
     left: 20px;
     cursor: pointer;
     transition: transform 200ms ease-in-out;
@@ -32,7 +32,7 @@
 
 .chevronRight {
     position: absolute;
-    top: 170px;
+    top: 45%;
     right: 20px;
     cursor: pointer;
     transition: transform 200ms ease-in-out;
@@ -48,4 +48,16 @@
     left: 50%;
     color: #FFFFFF;
     font-weight: 500;
+}
+
+
+/* version mobile */
+
+@media screen and (max-width: 768px) {
+    .carrouselContainer {
+        height: 255px;
+    }
+    .chevrons img {
+        width: 5%;
+    }
 }

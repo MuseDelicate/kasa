@@ -6,3 +6,12 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+
+/* version mobile */
+
+@media screen and (max-width: 768px) {
+    .collapseContainer {
+        width: 100%;
+    }
+}

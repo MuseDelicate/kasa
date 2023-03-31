@@ -23,15 +23,9 @@ const Carrousel = (props) => {
                 ? 
                     <div className={style.carrouselContainer}>
                         <img src={props.pictures[currentImg]} alt='à compléter' className={style.pictures}/>
-                        <div>
+                        <div className={style.chevrons}>
                             <img src={total > 1 ? chevronLeft : ''} alt={total > 1 ? 'flèche gauche' : ''} className={total > 1 ? style.chevronLeft : ''} onClick={() => {currentImg < 1 ? setCurrentImg(compteur) : setCurrentImg(currentImg - 1)}}/>
-                            {/* <img src={chevronLeft} alt='flèche gauche' className={style.chevronLeft}
-                                onClick={() => {currentImg < 1 ? setCurrentImg(compteur) : setCurrentImg(currentImg - 1)}}
-                            /> */}
                             <img src={total > 1 ? chevronRight : ''} alt={total > 1 ? 'flèche droite' : ''} className={total > 1 ? style.chevronRight : ''} onClick={() => {currentImg < 1 ? setCurrentImg(compteur) : setCurrentImg(currentImg - 1)}}/>
-
-                            {/* <img src={chevronRight} alt='flèche droite' className={style.chevronRight}
-                                onClick={() => {currentImg >= compteur ? setCurrentImg(0) : setCurrentImg(currentImg + 1)}}/> */}
                         </div>
                         <span className='index'>{currentImg + 1}/{props.pictures.length}</span>
 

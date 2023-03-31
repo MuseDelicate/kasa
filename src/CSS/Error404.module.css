@@ -17,6 +17,7 @@
     color: #FF6060;
     font-weight: 500;
     margin-bottom: 80px;
+    margin: 36px 3% 80px 3%;
 }
 
 .error a {
@@ -29,4 +30,16 @@
 
 .error a:hover {
     text-decoration: underline;
+}
+
+
+/* version mobile */
+
+@media screen and (max-width: 768px) {
+    .error h2 {
+        font-size: 96px;
+    }
+    .error h3 {
+        font-size: 18px;
+    }
 }

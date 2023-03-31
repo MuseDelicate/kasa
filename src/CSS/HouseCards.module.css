@@ -1,7 +1,7 @@
 .houseCards {
     background-color: #F7F7F7;
     border-radius: 25px;
-    padding: 2%;
+    padding: 1.5%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -12,18 +12,19 @@
     list-style-type: none;
     width: 29%;
     min-width: 340px;
-    max-width: 400px;
     height: 340px;
     margin: 2%;
     position: relative;
     background: linear-gradient(180deg, #FF6060 0%, #000000 100%);
     border-radius: 10px;
+    transition: all 200ms ease-in-out
 }
 
 .houseCard img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    padding: 0;
     overflow: hidden;
     object-fit: cover;
     opacity: 1;
@@ -32,6 +33,7 @@
 
 .houseCard img:hover {
     opacity: 0.5;
+    box-shadow: 5px 5px 5px #353535;
 }
 
 .houseCard span {
@@ -40,4 +42,33 @@
     bottom: 10px;
     color: #FFFFFF;
     font-weight: 600;
+}
+
+
+/* version tablette */
+
+@media screen and (max-width: 992px) {
+    .houseCards {
+        background-color: #FFF;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+    }
+    .houseCards li {
+        height: 250px;
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+
+/* version mobile */
+
+@media screen and (max-width: 767px) {
+    .houseCards li {
+        height: 200px;
+        /* width: 96%;
+        margin-left: auto;
+        margin-right: auto; */
+    }
 }

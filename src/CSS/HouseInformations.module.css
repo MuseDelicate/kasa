@@ -32,3 +32,28 @@
     flex-wrap: nowrap;
     border-radius: 10px;
 }
+
+
+/* Version tablette */
+
+@media screen and (max-width: 992px) {
+    .houseInformations h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* version mobile */
+
+@media screen and (max-width: 768px) {
+    .houseInformations h2 {
+        font-size: 20px;
+    }
+    .houseInformations span {
+        font-size: 16px;
+    }
+    .houseInformations .tags p {
+        min-width: 84px;
+        font-size: 12px;
+    }
+}

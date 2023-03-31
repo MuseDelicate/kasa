@@ -28,9 +28,15 @@
 
 /* version mobile */
 
-
-/* @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+    .headerKasa a img {
+        width: 70%;
+    }
+    .headerKasa nav a {
+        font-size: 12px;
+        margin-left: 10px;
+    }
     .headerKasa nav {
         text-transform: uppercase;
     }
-} */
+}
