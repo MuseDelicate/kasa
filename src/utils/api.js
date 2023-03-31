@@ -2,7 +2,6 @@
 
 const baseUrl = '../data/logement.json'
 
-// fonction pour récupérer la liste des logements
 export const loadHousingDatas = async() => {
     return await fetch(baseUrl)
         .then((res) => {

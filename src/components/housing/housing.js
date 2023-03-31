@@ -10,10 +10,9 @@ import * as api from '../../utils/api';
 import style from '../../CSS/Housing.module.css';
 import globalStyle from '../../CSS/Home.module.css';
 
-// vérifier qu'on renvoie vers 404 si l'id n'est pas bon
+
+
 // on met dans setData quant c'est disponible
-
-
 
 const Housing = () => {
     // on va utiliser useParams pour récupérer l'id dans l'URL

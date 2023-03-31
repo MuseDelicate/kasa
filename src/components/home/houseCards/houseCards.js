@@ -32,5 +32,4 @@ const HouseCards = () => {
 
 export default HouseCards;
 
-/* <Link to = '/housing/'> */
 

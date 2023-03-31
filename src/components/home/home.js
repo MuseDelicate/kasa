@@ -7,8 +7,6 @@ import style from '../../CSS/Home.module.css';
 import homeBanner from '../../assets/homeBanner.png';
 
 
-
-// ajouter ici le fichier css pour toute la page
 const Home = () => {
 
     return (

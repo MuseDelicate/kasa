@@ -2,7 +2,7 @@ import React from 'react';
 import style from '../../../CSS/HouseInformations.module.css';
 
 const HouseInformations = (props) => {
-    // props est un objet qui contient tout ce que j'ai passé en propriété lors de l'appel du composant
+    // props est un objet qui contient tout ce qui est passé en propriété lors de l'appel du composant
 
     let compteur = 0;
     return (
