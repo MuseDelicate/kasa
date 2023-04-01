@@ -41,6 +41,9 @@
         justify-content: space-between;
         width: 100%;
     }
+    .host {
+        width: 130px;
+    }
     .host span {
         font-size: 14px;
     }
