@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import chevronLeft from '../../assets/chevronLeft.png';
 import chevronRight from '../../assets/chevronRight.png';
+import chevronLeft from '../../assets/chevronLeft.png';
+
 import style from '../../CSS/Carrousel.module.css';
 
 const Carrousel = (props) => {
@@ -19,13 +20,26 @@ const Carrousel = (props) => {
             {(props.pictures !== undefined)
                 ? 
                     <div className={style.carrouselContainer}>
-                        <img src={props.pictures[currentImg]} alt={`vue ${currentImg + 1} du logement`} className={style.pictures}/>
+                        <img 
+                            src={props.pictures[currentImg]} 
+                            alt={`vue ${currentImg + 1} du logement`}
+                            className={style.pictures}
+                        />
                         <div className={style.chevrons}>
-                            <img src={total > 1 ? chevronLeft : ''} alt={total > 1 ? 'flèche gauche' : ''} className={total > 1 ? style.chevronLeft : ''} onClick={() => {currentImg < 1 ? setCurrentImg(compteur) : setCurrentImg(currentImg - 1)}}/>
-                            <img src={total > 1 ? chevronRight : ''} alt={total > 1 ? 'flèche droite' : ''} className={total > 1 ? style.chevronRight : ''} onClick={() => {currentImg < 1 ? setCurrentImg(compteur) : setCurrentImg(currentImg - 1)}}/>
+                            <img 
+                                src={total > 1 ? chevronLeft : ''} 
+                                alt={total > 1 ? 'flèche gauche' : ''} 
+                                className={total > 1 ? style.chevronLeft : ''}
+                                onClick={() => {currentImg === 0 ? setCurrentImg(compteur) : setCurrentImg(currentImg - 1)}}
+                            />
+                            <img 
+                                src={total > 1 ? chevronRight : ''} 
+                                alt={total > 1 ? 'flèche droite' : ''} 
+                                className={total > 1 ? style.chevronRight : ''}
+                                onClick={() => {currentImg < compteur ? setCurrentImg(currentImg + 1) : setCurrentImg(0)}}
+                                />
                         </div>
-                        <span className='index'>{currentImg + 1}/{props.pictures.length}</span>
-
+                        <span className={style.index}>{currentImg + 1}/{total}</span>
                     </div>
                 : ''
             }
@@ -34,5 +48,3 @@ const Carrousel = (props) => {
 }
 
 export default Carrousel;
-
-// src={isOpen === style.down ? chevronUp : chevronDown}

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import Header from '../Header';
 import HouseInformations from './houseInformations/HouseInformations';
 import HouseOwnerAndRating from './houseOwnerAndRating/HouseOwnerAndRating';
@@ -18,42 +18,46 @@ const Housing = () => {
     // on va utiliser useParams pour récupérer l'id dans l'URL
     const { id } = useParams();
 
-    // appeler l'API pour récupérer un seul item
-    const [houseData, setHouseData] = useState([0]); 
+    const [houseData, setHouseData] = useState({}); 
 
-
-    // useEffect prend 2 paramètres : une fonction et un tableau de dépendance, permet de modifier l'état, pour une tâche différé
-    // évite les await
-    // utilisé pour modifier l'état du composant (quand ça peut prendre un certain temps)
-    // mettre des conditions dans les pages si props en paramètres car useEffect va se relancer 2 fois
     useEffect(() => {
         api.loadHousingDatas()
             .then((res) => {
-                const resultat = res.filter(element => element.id === id)
-                setHouseData(resultat);
+                const resultat = res.filter(element => element.id === id);
+                setHouseData(resultat[0]);
             })
         }, [id]);
 
-        let compteur = 0;
+    // si l'id fourni n'est pas retrouvé dans la liste des id récupérés de l'API alors
+    // on renvoie vers la page d'erreur avec Navigate
+    if (houseData === undefined) {
+        return <Navigate to='/404'/>
+    }
+
+    // on initialise une variable 'compteur' pour pouvoir identifier chaque élément de la liste
+    let compteur = 0;
 
     return (
-        <div >
+        <div>
             <Header />
+            {(houseData !== undefined)
+            ?
             <div className={globalStyle.bodyKasa}>
                 <Carrousel 
-                    id = {houseData[0].id}
-                    pictures = {houseData[0].pictures}
+                    pictures = {houseData.pictures}
                 />
                 <div className={style.housingInfosAndOwnerContainer}>
+                {/* on passe les paramètres en props dans les composants */}
+                {/* ces propriétés seront retransmises au composant sous la forme d'un objet props */}
                     <HouseInformations 
-                        id ={houseData[0].id}
-                        title={houseData[0].title}
-                        location={houseData[0].location}
-                        tags={houseData[0].tags}
+                        id ={houseData.id}
+                        title={houseData.title}
+                        location={houseData.location}
+                        tags={houseData.tags}
                     />
                     <HouseOwnerAndRating  
-                        host={houseData[0].host}
-                        rating={houseData[0].rating}
+                        host={houseData.host}
+                        rating={houseData.rating}
                     />
                 </div>
                 <div className={style.housingCollapseContainer}>
@@ -61,26 +65,27 @@ const Housing = () => {
                         <Collapse 
                                 title={'Description'}
                             >
-                                <p>{houseData[0].description}</p>
+                                <p>{houseData.description}</p>
                             </Collapse>
                     </div>
                     <div className={style.equipmentsCollapse}>
                         <Collapse   
-                                id={houseData[0].id}
-                                title={'Equipements'}
-                                >
-                                <ul>
-                                    {houseData[0].equipments !== undefined 
-                                        ? houseData[0].equipments.map(elem => (
-                                            <li key={`${houseData[0].id} + ${compteur++}`}>{elem}</li>
-                                        ))
+                            id={houseData.id}
+                            title={'Equipements'}
+                        >
+                            <ul>
+                                {houseData.equipments !== undefined 
+                                    ? houseData.equipments.map(elem => (
+                                        <li key={`${houseData.id} + ${compteur++}`}>{elem}</li>
+                                    ))
                                         : ''
                                     }
                                 </ul>
                             </Collapse>
+                        </div>
                     </div>
-                </div>
             </div>
+            : ''}
             <Footer />
         </div>
     )

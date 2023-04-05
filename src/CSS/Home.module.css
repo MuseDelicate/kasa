@@ -30,3 +30,14 @@ body {
         padding: 12px 20px;
     }
 }
+
+
+/* écrans très larges */
+
+@media screen and (min-width: 1400px) {
+    .bodyKasa {
+        width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

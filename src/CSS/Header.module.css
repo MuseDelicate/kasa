@@ -25,6 +25,10 @@
     text-decoration: underline;
 }
 
+.headerKasa nav a:active {
+    text-decoration: underline;
+}
+
 
 /* version mobile */
 

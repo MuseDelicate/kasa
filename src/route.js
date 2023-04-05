@@ -9,9 +9,9 @@ import Error404 from "./components/error404/Error404";
 const router = createBrowserRouter([
     { path: "/", element: <Home />, errorElement: <Error404 />},
 
-    { path: "/housing/:id", element: <Housing />, errorElement: <Error404 />},
+    { path: "/Housing/:id", element: <Housing />, errorElement: <Error404 />},
 
-    { path: "/about", element: <About />, errorElement: <Error404 />},
+    { path: "/About", element: <About />, errorElement: <Error404 />},
 
     { path: "/404", element: <Error404 />},
 
